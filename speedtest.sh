@@ -1,9 +1,9 @@
 #!/bin/sh
 # These values can be overwritten with env variables
 LOOP="${LOOP:-false}"
-LOOP_DELAY="${LOOP_DELAY:-60}"
+LOOP_DELAY="${LOOP_DELAY:-30}"
 DB_SAVE="${DB_SAVE:-false}"
-DB_HOST="${DB_HOST:-http://localhost:8086}"
+DB_HOST="${DB_HOST:-http://influxdb:8086}"
 DB_NAME="${DB_NAME:-speedtest}"
 DB_USERNAME="${DB_USERNAME:-admin}"
 DB_PASSWORD="${DB_PASSWORD:-password}"
