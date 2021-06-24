@@ -1,7 +1,7 @@
 version: "3"
 
 networks:
-  speedtest:
+  speed:
   
 services:
   grafana:
@@ -9,7 +9,7 @@ services:
     container_name: grafana
     restart: always
     networks:
-      - speedtest
+      - speed
     ports:
       - 3000:3000
     volumes:
@@ -21,7 +21,7 @@ services:
     volumes:
       - influxdb:/var/lib/influxdb
      networks:
-      - speedtest
+      - speed
     ports:
       - 8083:8083
       - 8086:8086
@@ -34,7 +34,7 @@ services:
     image: robinmanuelthiel/speedtest:latest
     container_name: speedtest
     networks:
-      - speedtest
+      - speed
     environment:
       - LOOP=true
       - LOOP_DELAY=1800
