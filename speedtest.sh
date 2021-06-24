@@ -1,7 +1,7 @@
 #!/bin/sh
 # These values can be overwritten with env variables
 LOOP="${LOOP:-false}"
-LOOP_DELAY="${LOOP_DELAY:-30}"
+LOOP_DELAY="${LOOP_DELAY:-15}"
 DB_SAVE="${DB_SAVE:-false}"
 DB_HOST="${DB_HOST:-http://influxdb:8086}"
 DB_NAME="${DB_NAME:-speedtest}"
@@ -38,7 +38,7 @@ then
     while :
     do
         run_speedtest
-        echo "Running nest test in ${LOOP_DELAY}s..."
+        echo "Running next test in ${LOOP_DELAY}s..."
         echo ""
         sleep $LOOP_DELAY
     done
