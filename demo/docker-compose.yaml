@@ -9,7 +9,7 @@ services:
       - grafana:/var/lib/grafana
 
   influxdb:
-    image: influxdb
+    image: armv7/influxdb
     volumes:
       - influxdb:/var/lib/influxdb
     ports:
