@@ -35,7 +35,8 @@ services:
       - INFLUXDB_DB="speedtest"
 
   speedtest:
-    image: robinmanuelthiel/speedtest:latest
+    #image: robinmanuelthiel/speedtest:latest
+    image: keithdw/speedtest:latest
     container_name: speedtest
     networks:
       - speed
