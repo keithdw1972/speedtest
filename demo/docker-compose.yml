@@ -20,7 +20,7 @@ services:
       - grafana:/var/lib/grafana
 
   influxdb:
-    image: arm32v7/influxdb
+    image: influxdb
     container_name: influxdb
     volumes:
       - influxdb:/var/lib/influxdb
