@@ -1,0 +1,15 @@
+FROM debian:stable-slim
+
+RUN set -x && \
+    apt-get update -y && \
+    apt-get install -y --no-install-recommends gnupg1 apt-transport-https dirmngr curl jq && \
+    apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 379CE192D401AB61 && \
+    echo "deb http://ookla.bintray.com/debian buster main" | tee -a /etc/apt/sources.list && \
+    apt-get update -y && \
+    apt-get -y install speedtest && \
+    apt-get clean -y && \
+    apt-get autoremove -y && \
+    rm -rf /var/lib/apt/lists/* /src/* /tmp/*
+
+COPY ./speedtest.sh .
+CMD ["./speedtest.sh"]
