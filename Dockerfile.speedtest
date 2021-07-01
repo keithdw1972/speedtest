@@ -2,7 +2,7 @@ FROM debian:stable-slim
 
 RUN set -x && \
     apt-get update -y && \
-    apt-get install -y --no-install-recommends gnupg1 apt-transport-https dirmngr curl jq && \
+    apt-get install -y --no-install-recommends gnupg2 dos2unix apt-transport-https dirmngr curl jq && \
     apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 379CE192D401AB61 && \
     echo "deb http://ookla.bintray.com/debian buster main" | tee -a /etc/apt/sources.list && \
     apt-get update -y && \
@@ -12,4 +12,5 @@ RUN set -x && \
     rm -rf /var/lib/apt/lists/* /src/* /tmp/*
 
 COPY ./speedtest.sh .
+RUN dos2unix speedtest.sh
 CMD ["./speedtest.sh"]
