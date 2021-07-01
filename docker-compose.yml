@@ -11,7 +11,7 @@ services:
     networks:
       - speed
     ports:
-      - 3000:3000
+      - 3001:3000
     volumes:
       - grafana:/var/lib/grafana
 
