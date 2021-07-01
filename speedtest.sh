@@ -1,6 +1,6 @@
 #!/bin/sh
 # These values can be overwritten with env variables
-LOOP="${LOOP:-false}"
+LOOP="${LOOP:-true}"
 LOOP_DELAY="${LOOP_DELAY:-15}"
 DB_SAVE="${DB_SAVE:-false}"
 DB_HOST="${DB_HOST:-http://influxdb:8086}"
